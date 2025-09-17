@@ -1,6 +1,9 @@
 from flask import Flask, request, redirect, send_from_directory, url_for, render_template
 
-app = Flask(__name__)
+app = Flask(
+        __name__,
+        static_folder='static',
+        )
 
 @app.route("/")
 def index():
@@ -18,11 +21,6 @@ def resume_fa():
         
     }
     return render_template('index.html', **data)
-
-@app.route('/static/<path:path>')
-def send_report(path):
-    # Using request args for path will expose you to directory traversal attacks
-    return send_from_directory('static', path)
 
 if __name__ == '__main__':
     app.run(debug=False)
