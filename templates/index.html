@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رزومه سیدحسین موسوی دهاقانی - توسعه‌دهنده بک‌اند</title>
+    <title>رزومه {{ name }}</title>
     
     <!-- Custom CSS (No Tailwind) -->
+    <link href="../static/css/font.css" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet">
     
     <!-- AOS (Animate on Scroll) Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Google Fonts (Vazirmatn for Persian) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="../static/css/aos.css" rel="stylesheet">
 </head>
 
 <body class="custom-bg custom-text transition-colors duration-500">
@@ -35,12 +31,10 @@
     <div class="container">
         <!-- Header Section -->
         <header class="header-section" data-aos="fade-down">
-            <img class="profile-img shadow-xl" src="https://placehold.co/160x160/6366f1/white?text=AR" alt="تصویر پروفایل علی رضایی">
-            <h1 class="main-title">سیدحسین موسوی دهاقانی</h1>
-            <h2 class="subtitle">توسعه‌دهنده بک‌اند (Python & Django)</h2>
-            <p class="desc">
-                توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و خلاقیت
-            </p>
+            <img class="profile-img shadow-xl" src="../static/image/profile.jpeg" alt="تصویر پروفایل {{ firstname }}">
+            <h1 class="main-title">{{ firstname }} {{ lastname }}</h1>
+            <h2 class="subtitle">{{ title }}</h2>
+            <p class="desc">{{ description }}</p>
         </header>
 
         <main>
@@ -48,137 +42,132 @@
             <section id="about" class="section" data-aos="fade-up">
                 <h3 class="section-title">درباره من</h3>
                 <div class="about-box">
-                    <p class="about-text">
-                        من یک توسعه‌دهنده پرانرژی هستم که بیشتر در زمینه بک‌اند با پایتون و جنگو فعالیت می‌کنم. به بهینه‌سازی سیستم‌ها، طراحی APIهای مقیاس‌پذیر و پیاده‌سازی ساختارهای داده علاقه دارم. در کنار بک‌اند، تجربه کار با فرانت‌اند و کتابخانه‌های متنوع هم دارم.
-                    </p>
+                    <p class="about-text">{{ about }}</p>
                 </div>
             </section>
 
+            {% if skills %}
             <!-- Skills Section -->
             <section id="skills" class="section" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="section-title">مهارت‌ها</h3>
                 <div class="skills-grid">
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">Django</span>
-                    <span class="skill-badge">FastAPI</span>
-                    <span class="skill-badge">SQL</span>
-                    <span class="skill-badge">REST API</span>
-                    <span class="skill-badge">Docker</span>
-                    <span class="skill-badge">JavaScript</span>
-                    <span class="skill-badge">HTML & CSS</span>
-                    <span class="skill-badge">Git</span>
+                    {% for skill in skills %}
+                    <div class="skill-badge">{{ skill }}</div>
+                    {% endfor %}
                 </div>
             </section>
+            {% endif %}
 
+            {% if portfolio %}
             <!-- Portfolio Section -->
             <section id="portfolio" class="section" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="section-title">نمونه‌کارها</h3>
                 <!-- Filter Buttons -->
                 <div class="portfolio-filters" id="portfolio-filters">
                     <button class="filter-btn active" data-filter="all">همه</button>
-                    <button class="filter-btn" data-filter="backend">بک‌اند</button>
-                    <button class="filter-btn" data-filter="frontend">فرانت‌اند</button>
-                    <button class="filter-btn" data-filter="fullstack">فول‌استک</button>
+                    {% for category, details in portfolio.items() %}
+                    <button class="filter-btn" data-filter="{{ category }}">{{ details.name }}</button>
+                    {% endfor %}
                 </div>
                 <!-- Projects Grid -->
                 <div id="portfolio-grid" class="portfolio-grid">
-                    <div class="project-card" data-category="backend" data-aos="zoom-in-up">
-                        <img class="project-img" src="https://placehold.co/600x400/1f2937/a5b4fc?text=Backend" alt="پروژه مدیریت کاربران">
+                    {% for category, details in portfolio.items() %}
+                    {% for project in details.projects %}
+                    <div class="project-card" data-category="{{ category }}" data-aos="zoom-in-up">
+                        <img class="project-img" src="{{ project.image }}" alt="{{ project.title }}">
                         <div class="project-content">
-                            <h4 class="project-title">پروژه مدیریت کاربران (Django)</h4>
+                            <h4 class="project-title">{{ project.title }}</h4>
                         </div>
                     </div>
-                    <div class="project-card" data-category="frontend" data-aos="zoom-in-up" data-aos-delay="100">
-                        <img class="project-img" src="https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend" alt="وب‌سایت شرکتی">
-                        <div class="project-content">
-                            <h4 class="project-title">وب‌سایت شرکتی (React)</h4>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="fullstack" data-aos="zoom-in-up" data-aos-delay="200">
-                        <img class="project-img" src="https://placehold.co/600x400/34d399/14532d?text=Fullstack" alt="فروشگاه آنلاین">
-                        <div class="project-content">
-                            <h4 class="project-title">فروشگاه آنلاین (Django + React)</h4>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="backend" data-aos="zoom-in-up" data-aos-delay="300">
-                        <img class="project-img" src="https://placehold.co/600x400/f87171/7f1d1d?text=API" alt="API مالی">
-                        <div class="project-content">
-                            <h4 class="project-title">API مالی (FastAPI)</h4>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    {% endfor %}
                 </div>
             </section>
+            {% endif %}
 
+            {% if contact %}
             <!-- Contact Section -->
             <section id="contact" class="section" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="section-title">تماس با من</h3>
                 <div class="contact-grid">
+                    {% if contact.phone %}
                     <!-- Phone -->
                     <div class="contact-item group shadow-contact-item">
-                        <a href="tel:09121234567" class="contact-link">
+                        <a href="tel:+{{ contact.phone }}" class="contact-link">
                             <span class="contact-icon">📞</span>
                             <div>
                                 <p class="contact-label">تلفن</p>
-                                <p class="contact-value">09121234567</p>
+                                <p class="contact-value" dir="ltr">{{ contact.viewphone }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="09121234567">
+                        <button class="copy-btn" data-copy="+{{ contact.phone }}">
                             <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
                             <span class="copy-feedback hidden">کپی شد!</span>
                         </button>
                     </div>
-                     <!-- Email -->
+                    {% endif %}
+
+                    {% if contact.email %}
+                    <!-- Email -->
                     <div class="contact-item group shadow-contact-item">
-                        <a href="mailto:example@email.com" class="contact-link">
+                        <a href="mailto:{{ contact.email }}" class="contact-link">
                             <span class="contact-icon">✉️</span>
                             <div>
                                 <p class="contact-label">ایمیل</p>
-                                <p class="contact-value">example@email.com</p>
+                                <p class="contact-value">{{ contact.email }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="example@email.com">
+                        <button class="copy-btn" data-copy="{{ contact.email }}">
                              <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
                             <span class="copy-feedback hidden">کپی شد!</span>
                         </button>
                     </div>
+                    {% endif %}
+
+                    {% if contact.phone %}
                     <!-- Whatsapp -->
                     <div class="contact-item group shadow-contact-item">
-                        <a href="https://wa.me/989121234567" target="_blank" class="contact-link">
+                        <a href="https://wa.me/{{ contact.phone }}" target="_blank" class="contact-link">
                            <span class="contact-icon">💬</span>
                             <div>
                                 <p class="contact-label">واتساپ</p>
-                                <p class="contact-value">+989121234567</p>
+                                <p class="contact-value" dir="ltr">{{ contact.viewphone }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="+989121234567">
+                        <button class="copy-btn" data-copy="+{{ contact.phone }}">
                              <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
                             <span class="copy-feedback hidden">کپی شد!</span>
                         </button>
                     </div>
-                     <!-- Telegram -->
+                    {% endif %}
+
+                    {% if contact.telegram %}
+                    <!-- Telegram -->
                     <div class="contact-item group shadow-contact-item">
-                        <a href="https://t.me/username" target="_blank" class="contact-link">
+                        <a href="https://t.me/{{ contact.telegram }}" target="_blank" class="contact-link">
                             <span class="contact-icon">📢</span>
                             <div>
                                 <p class="contact-label">تلگرام</p>
-                                <p class="contact-value">@username</p>
+                                <p class="contact-value">@{{ contact.telegram }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="@username">
-                             <span class="copy-icon">
+                        <button class="copy-btn" data-copy="@{{ contact.telegram }}">
+                            <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
                             <span class="copy-feedback hidden">کپی شد!</span>
                         </button>
                     </div>
+                    {% endif %}
                 </div>
             </section>
+            {% endif %}
         </main>
 
         <!-- Footer -->
@@ -189,7 +178,7 @@
     </div>
     
     <!-- AOS Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../static/js/aos.js"></script>
     
     <script>
         // --- Initialize AOS ---

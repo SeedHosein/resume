@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, send_from_directory, url_for, render_template
+from flask import Flask, request, redirect, url_for, render_template
 
 app = Flask(
         __name__,
@@ -12,13 +12,86 @@ def index():
 @app.route("/fa")
 def resume_fa():
     data = {
-        "name": "سیدحسین موسوی دهاقانی",
+        "firstname": "سیدحسین",
+        "lastname": "موسوی دهاقانی",
         "age": "20",
-        "about": "",
+        "title": "توسعه‌دهنده بک‌اند (Python & Django)",
+        "description": "توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و خلاقیت",
+        "about": "من یک توسعه‌دهنده بک‌اند با تمرکز بر Python و Django هستم. علاقه‌مند به یادگیری تکنولوژی‌های جدید و حل چالش‌های پیچیده.",
         "skills": [
-            "",""
-            ],
-        
+            "Python",
+            "Django",
+            "Flask",
+            "RESTful API",
+            "Git",
+            "PostgreSQL",
+            "Linux",
+            "Docker"
+        ],
+        "portfolio": {
+            "backend": {
+                "name": "بک‌اند",
+                "projects": [
+                    {
+                        "title": "پروژه مدیریت کاربران",
+                        "description": "یک API برای مدیریت کاربران با Django REST Framework",
+                        "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend"
+                    },
+                    {
+                        "title": "پروژه احراز هویت",
+                        "description": "یک API برای احراز هویت کاربران با Django REST Framework",
+                        "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend"
+                    }
+                ]
+            },
+            "frontend": {
+                "name": "فرانت‌اند",
+                "projects": [
+                    {
+                        "title": "وب‌سایت شرکتی",
+                        "description": "یک وب‌سایت شرکتی با React",
+                        "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend"
+                    },
+                    {
+                        "title": "پروژه فروشگاه آنلاین",
+                        "description": "یک فروشگاه آنلاین با React",
+                        "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend"
+                    }
+                ]
+            },
+            "fullstack": {
+                "name": "فول‌استک",
+                "projects": [
+                    {
+                        "title": "فروشگاه آنلاین",
+                        "description": "یک فروشگاه آنلاین با Django و React",
+                        "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack"
+                    },
+                    {
+                        "title": "پروژه مدیریت محتوا",
+                        "description": "یک پروژه فول‌استک با Django و React",
+                        "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack"
+                    }
+                ]
+            },
+            "test": {
+                "name": "تست",
+                "projects": [
+                    {
+                        "title": "پروژه تست",
+                        "description": "یک پروژه تست با Django و React",
+                        "image": "https://placehold.co/600x400/34d399/14532d?text=Test"
+                    }
+                ]
+            }
+        },
+        "contact": {
+            "email": "SeedHosein0@email.com",
+            "phone": "989966697895",
+            "viewphone": "+98 996 669 7895",
+            "telegram": "SeedHosein0",
+            "location": "ایران، اصفهان"
+        }
     }
     return render_template('index.html', **data)
 
