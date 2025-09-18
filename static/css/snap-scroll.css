@@ -1,0 +1,28 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.footer, .section, .header-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.section, .header-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.section {
+    padding-top: 10px;
+}

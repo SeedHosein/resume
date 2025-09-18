@@ -45,6 +45,7 @@ html.dark body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    min-height: 110vh;
 }
 
 @media (min-width: 640px) {
@@ -79,12 +80,13 @@ html.dark body {
 
 .header-section {
     text-align: center;
+    min-height: 110vh;
     padding: 5rem 0 2rem;
 }
 
 .profile-img {
-    width: 8rem;
-    height: 8rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
     margin: 0 auto 1.5rem;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
@@ -99,8 +101,8 @@ html.dark .profile-img {
 
 @media (min-width: 768px) {
     .profile-img {
-        width: 10rem;
-        height: 10rem;
+        width: 14rem;
+        height: 14rem;
     }
 }
 
@@ -111,7 +113,7 @@ html.dark .profile-img {
 .main-title {
     font-size: 2.5rem;
     font-weight: bold;
-    line-height: 2.5rem;
+    line-height: 3.5rem;
     color: var(--gray-900);
 }
 
@@ -148,7 +150,7 @@ html.dark .desc {
 }
 
 .section {
-    min-height: 100vh;
+    min-height: 110vh;
     padding: 6rem 0rem 2rem;
     display: flex;
     flex-direction: column;
@@ -160,7 +162,6 @@ html.dark .desc {
 @media (max-width: 1023px) {
     .section {
         padding: 3rem 0 1rem;
-        min-height: 70vh;
     }
 }
 
