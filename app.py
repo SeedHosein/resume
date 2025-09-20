@@ -35,12 +35,14 @@ def resume_fa():
                     {
                         "title": "پروژه مدیریت کاربران",
                         "description": "یک API برای مدیریت کاربران با Django REST Framework",
-                        "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend"
+                        "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
+                        "tags": ["Django", "REST", "API", "Backend"]
                     },
                     {
                         "title": "پروژه احراز هویت",
                         "description": "یک API برای احراز هویت کاربران با Django REST Framework",
-                        "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend"
+                        "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
+                        "tags": ["Django", "REST", "API"]
                     }
                 ]
             },
@@ -50,12 +52,14 @@ def resume_fa():
                     {
                         "title": "وب‌سایت شرکتی",
                         "description": "یک وب‌سایت شرکتی با React",
-                        "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend"
+                        "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
+                        "tags": ["React", "Frontend"]
                     },
                     {
                         "title": "پروژه فروشگاه آنلاین",
                         "description": "یک فروشگاه آنلاین با React",
-                        "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend"
+                        "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
+                        "tags": ["React", "Frontend"]
                     }
                 ]
             },
@@ -65,12 +69,14 @@ def resume_fa():
                     {
                         "title": "فروشگاه آنلاین",
                         "description": "یک فروشگاه آنلاین با Django و React",
-                        "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack"
+                        "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
+                        "tags": ["Django", "React", "Fullstack"]
                     },
                     {
                         "title": "پروژه مدیریت محتوا",
                         "description": "یک پروژه فول‌استک با Django و React",
-                        "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack"
+                        "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
+                        "tags": ["Django", "React", "Fullstack"]
                     }
                 ]
             },
@@ -80,7 +86,9 @@ def resume_fa():
                     {
                         "title": "پروژه تست",
                         "description": "یک پروژه تست با Django و React",
-                        "image": "https://placehold.co/600x400/34d399/14532d?text=Test"
+                        "image": "https://placehold.co/600x400/34d399/14532d?text=Test",
+                        "tags": ["Django", "React", "Test"],
+                        "link": "https://github.com/yourusername/test-project"
                     }
                 ]
             }

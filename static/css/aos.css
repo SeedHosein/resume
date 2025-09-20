@@ -38,11 +38,11 @@
     transition-duration: .2s
 }
 
-[data-aos][data-aos][data-aos-delay="200"],body[data-aos-delay="200"] [data-aos] {
+body:not(.project-modal-open) [data-aos][data-aos][data-aos-delay="200"],body:not(.project-modal-open)[data-aos-delay="200"] [data-aos] {
     transition-delay: 0
 }
 
-[data-aos][data-aos][data-aos-delay="200"].aos-animate,body[data-aos-delay="200"] [data-aos].aos-animate {
+body:not(.project-modal-open) [data-aos][data-aos][data-aos-delay="200"].aos-animate,body:not(.project-modal-open)[data-aos-delay="200"] [data-aos].aos-animate {
     transition-delay: .2s
 }
 
@@ -178,7 +178,7 @@
     transition-delay: .75s
 }
 
-[data-aos][data-aos][data-aos-duration="800"],body[data-aos-duration="800"] [data-aos] {
+body:not(.project-modal-open) [data-aos][data-aos][data-aos-duration="800"],body:not(.project-modal-open)[data-aos-duration="800"] [data-aos] {
     transition-duration: .8s
 }
 
@@ -722,7 +722,7 @@
     transition-timing-function: cubic-bezier(.25,.25,.75,.75)
 }
 
-[data-aos][data-aos][data-aos-easing=ease],body[data-aos-easing=ease] [data-aos] {
+body:not(.project-modal-open) [data-aos][data-aos][data-aos-easing=ease],body:not(.project-modal-open)[data-aos-easing=ease] [data-aos] {
     transition-timing-function: ease
 }
 
@@ -798,17 +798,17 @@
     transition-timing-function: cubic-bezier(.455,.03,.515,.955)
 }
 
-[data-aos^=fade][data-aos^=fade] {
+body:not(.project-modal-open) [data-aos^=fade][data-aos^=fade] {
     opacity: 0;
     transition-property: opacity,transform
 }
 
-[data-aos^=fade][data-aos^=fade].aos-animate {
+body:not(.project-modal-open) [data-aos^=fade][data-aos^=fade].aos-animate {
     opacity: 1;
     transform: translateZ(0)
 }
 
-[data-aos=fade-up] {
+body:not(.project-modal-open) [data-aos=fade-up] {
     transform: translate3d(0,100px,0)
 }
 
@@ -840,12 +840,12 @@
     transform: translate3d(100px,-100px,0)
 }
 
-[data-aos^=zoom][data-aos^=zoom] {
+body:not(.project-modal-open) [data-aos^=zoom][data-aos^=zoom] {
     opacity: 0;
     transition-property: opacity,transform
 }
 
-[data-aos^=zoom][data-aos^=zoom].aos-animate {
+body:not(.project-modal-open) [data-aos^=zoom][data-aos^=zoom].aos-animate {
     opacity: 1;
     transform: translateZ(0) scale(1)
 }
@@ -854,7 +854,7 @@
     transform: scale(.6)
 }
 
-[data-aos=zoom-in-up] {
+body:not(.project-modal-open) [data-aos=zoom-in-up] {
     transform: translate3d(0,100px,0) scale(.6)
 }
 

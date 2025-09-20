@@ -317,28 +317,6 @@ html.dark .filter-btn:focus {
     }
 }
 
-.project-card {
-    background: var(--white);
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 32px 10px rgb(95 95 95 / 25%);
-}
-
-html.dark .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
-}
-
-html.dark .project-card {
-    background: var(--gray-800);
-}
-
 .project-img {
     width: 100%;
     height: 12rem;
@@ -536,4 +514,176 @@ html.dark .theme-toggle-btn:hover {
 
 .duration-500 {
     transition-duration: 0.5s;
+}
+
+.project-card:not(.active) {
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.aos-init.aos-animate.project-card:not(.active):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px 10px rgb(95 95 95 / 25%);
+}
+
+html.dark .aos-init.aos-animate.project-card:not(.active):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.12);
+}
+
+/* project mila not active */
+.project-card:not(.active) .project-description,
+.project-card:not(.active) .project-tag,
+.project-card:not(.active) .project-link {
+    display: none;
+}
+
+.project-modal {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: 1s all, 0s background;
+}
+
+html.dark .project-card .project-modal {
+    background: var(--gray-800);
+}
+
+/* --- project mila active --- */
+
+/* Project Descriptions */
+.project-card.active .project-description {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+html.dark .project-card.active .project-description {
+    color: var(--gray-400);
+}
+
+/* Project Tags */
+.project-card.active .project-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0.25rem 0 0;
+    border-radius: 0.375rem;
+    background: var(--gray-200);
+    color: var(--gray-800);
+    font-size: 0.875rem;
+}
+
+html.dark .project-card.active .project-tag {
+    background: var(--gray-700);
+    color: var(--gray-200);
+}
+
+/* Project Links */
+.project-card.active .project-link {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0.25rem 0 0;
+    border-radius: 0.375rem;
+    background: var(--gray-200);
+    color: var(--gray-800);
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+html.dark .project-card.active .project-link.active {
+    background: var(--gray-700);
+    color: var(--gray-200);
+}
+
+/* project modal animation */
+.overlay {
+    display: contents;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(43, 43, 43, 0.1);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 2s ease, display 0.6s ease;
+}
+
+.project-card.active .overlay {
+    display: block;
+    opacity: 1;
+    z-index: 1001;
+}
+
+html body .aos-init.aos-animate.project-card.active {
+    z-index: 1000;
+}
+
+.project-card.active .project-modal {
+    position: fixed;
+    top: 10vh;
+    left: 20vw;
+    width: 60vw;
+    max-width: 800px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1002;
+}
+
+.project-card.active .project-img {
+    height: unset;
+}
+
+/* Close button inside expanded container */
+.project-close {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 103;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+html.dark .project-close {
+    background: rgba(34, 34, 34, 0.9);
+    color: var(--gray-200);
+}
+
+.project-card.active .project-close {
+    display: block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 880px) {
+    .project-card.active .project-container {
+        width: 92vw;
+        height: auto;
+        left: 50%;
+        top: 50%;
+    }
+
+    .project-card.active .project-img {
+        width: 100%;
+        height: 220px;
+        display: block;
+    }
+
+    .project-card.active .project-content {
+        width: 100%;
+    }
+
+    .project-close {
+        left: auto;
+        right: 10px;
+    }
 }

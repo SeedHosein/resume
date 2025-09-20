@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رزومه {{ name }}</title>
+    <title>رزومه {{ firstname }}</title>
     
     <!-- Custom CSS (No Tailwind) -->
     <link href="../static/css/font.css" rel="stylesheet">
@@ -75,9 +75,22 @@
                     {% for category, details in portfolio.items() %}
                     {% for project in details.projects %}
                     <div class="project-card" data-category="{{ category }}" data-aos="zoom-in-up">
-                        <img class="project-img" src="{{ project.image }}" alt="{{ project.title }}">
-                        <div class="project-content">
-                            <h4 class="project-title">{{ project.title }}</h4>
+                        <div class="overlay"></div>
+                        <div class="project-modal">
+                            <img class="project-img" src="{{ project.image }}" alt="{{ project.title }}">
+                            <div class="project-content">
+                                <h4 class="project-title">{{ project.title }}</h4>
+                                {% if project.description %}
+                                <p class="project-description">{{ project.description }}</p>
+                                {% endif %}
+                                {% for tag in project.tags %}
+                                <span class="project-tag">{{ tag }}</span>
+                                {% endfor %}
+                                {% if project.link %}
+                                <a href="{{ project.link }}" class="project-link">مشاهده پروژه</a>
+                                {% endif %}
+                            </div>
+                            <button class="project-close" aria-label="بستن" onclick="closeModal()">×</button>
                         </div>
                     </div>
                     {% endfor %}
@@ -180,104 +193,6 @@
     
     <!-- AOS Script -->
     <script src="../static/js/aos.js"></script>
-    
-    <script>
-        // --- Initialize AOS ---
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50,
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Theme Toggler ---
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const darkIcon = document.getElementById('theme-toggle-dark-icon');
-            const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-            // تغییر: استفاده از html به جای document.documentElement
-            const htmlTag = document.documentElement;
-
-            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                htmlTag.classList.add('dark');
-                lightIcon.classList.remove('hidden');
-            } else {
-                htmlTag.classList.remove('dark');
-                darkIcon.classList.remove('hidden');
-            }
-            themeToggleBtn.addEventListener('click', () => {
-                darkIcon.classList.toggle('hidden');
-                lightIcon.classList.toggle('hidden');
-                if (localStorage.getItem('theme')) {
-                    if (localStorage.getItem('theme') === 'light') {
-                        htmlTag.classList.add('dark');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        htmlTag.classList.remove('dark');
-                        localStorage.setItem('theme', 'light');
-                    }
-                } else {
-                    if (htmlTag.classList.contains('dark')) {
-                        htmlTag.classList.remove('dark');
-                        localStorage.setItem('theme', 'light');
-                    } else {
-                        htmlTag.classList.add('dark');
-                        localStorage.setItem('theme', 'dark');
-                    }
-                }
-            });
-
-            // --- Portfolio Filter ---
-            const filterBtns = document.querySelectorAll('#portfolio-filters .filter-btn');
-            const portfolioGrid = document.getElementById('portfolio-grid');
-            const projects = portfolioGrid.querySelectorAll('.project-card');
-            function setActiveButton(activeBtn) {
-                 filterBtns.forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                activeBtn.classList.add('active');
-            }
-            setActiveButton(document.querySelector('.filter-btn[data-filter="all"]'));
-            filterBtns.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.getAttribute('data-filter');
-                    setActiveButton(button);
-                    projects.forEach(project => {
-                        const category = project.getAttribute('data-category');
-                        if (filter === 'all' || filter === category) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            // --- Copy to Clipboard ---
-            const copyButtons = document.querySelectorAll('.copy-btn');
-            copyButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const textToCopy = button.getAttribute('data-copy');
-                    const textArea = document.createElement('textarea');
-                    textArea.value = textToCopy;
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    try {
-                        document.execCommand('copy');
-                        const copyIcon = button.querySelector('.copy-icon');
-                        const copyFeedback = button.querySelector('.copy-feedback');
-                        copyIcon.classList.add('hidden');
-                        copyFeedback.classList.remove('hidden');
-                        setTimeout(() => {
-                            copyIcon.classList.remove('hidden');
-                            copyFeedback.classList.add('hidden');
-                        }, 2000);
-                    } catch (err) {
-                        console.error('Failed to copy text: ', err);
-                    }
-                    document.body.removeChild(textArea);
-                });
-            });
-        });
-    </script>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>
