@@ -19,6 +19,7 @@
     --gray-800: #1f2937;
     --gray-900: #111827;
     --white: #fff;
+    --black: #000;
     --indigo-400: #818cf8;
     --indigo-600: #4f46e5;
     --indigo-900: #312e81;
@@ -143,6 +144,159 @@ html.dark .subtitle {
 
 html.dark .desc {
     color: var(--gray-300);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+    max-width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    border: 2px solid var(--black);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+html.dark .social-icon {
+    border-color: var(--gray-700);
+}
+
+.social-icon img {
+    width: 2.6rem;
+    height: 2.6rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.8s ease;
+    background: var(--bg, #070707);
+}
+
+.social-icon:hover::before {
+    bottom: 0;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    border-color: transparent;
+}
+
+.social-icon:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* Social media brand colors */
+.social-icon.github::before {
+    background: #070707;
+}
+
+.social-icon.gitlab::before {
+    background: #1d0038;
+}
+
+.social-icon.gitlab:hover img {
+    /* color: #E24329; */
+    filter: invert(32%) sepia(98%) saturate(2058%) hue-rotate(346deg) brightness(92%) contrast(93%);
+}
+
+.social-icon.linkedin::before {
+    background: #0C66C2;
+}
+
+.social-icon.twitter::before {
+    background: #070707;
+}
+
+.social-icon.instagram::before {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.social-icon.facebook::before {
+    background: #0A66FF;
+}
+
+.social-icon.youtube::before {
+    background: #ff0000;
+}
+
+.social-icon.telegram::before {
+    background: #2EA4DE;
+}
+
+.social-icon.whatsapp::before {
+    background: #25D366;
+}
+
+.social-icon.reddit::before {
+    background: #FF4500;
+}
+
+html.dark .social-icon.reddit::before {
+    background: #fff;
+}
+
+html.dark .social-icon.reddit:hover img {
+    /* color: #FF4500; */
+    filter: invert(34%) sepia(59%) saturate(4112%) hue-rotate(0deg) brightness(102%) contrast(106%);
+}
+
+.social-icon.twitch::before {
+    background: #9146FF;
+}
+
+.social-icon.tiktok::before {
+    background: #000;
+}
+
+.social-icon.snapchat::before {
+    background: #FFFA00;
+}
+
+.social-icon.snapchat:hover img {
+    filter: unset;
+}
+
+/* TODO: beter color stackoverflow logo */
+
+.social-icon.stackoverflow::before {
+    background: #222426;
+}
+
+.social-icon.stackoverflow:hover img {
+    filter: invert(59%) sepia(17%) saturate(2464%) hue-rotate(341deg) brightness(97%) contrast(97%);
+}
+
+.social-icon.threads::before {
+    background: #000;
+}
+
+.social-icon.line::before {
+    background: #22BA4F;
 }
 
 .hidden {

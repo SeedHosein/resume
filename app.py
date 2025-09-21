@@ -98,7 +98,13 @@ def resume_fa():
             "phone": "989966697895",
             "viewphone": "+98 996 669 7895",
             "telegram": "SeedHosein0",
-            "location": "ایران، اصفهان"
+            "location": "ایران، اصفهان",
+            "social": {
+                "github": "https://github.com/SeedHosein",
+                "linkedin": "https://www.linkedin.com/in/SeedHosein",
+                "instagram": "https://www.instagram.com/SeedHosein0",
+                "whatsapp": "https://wa.me/989966697895",
+            }
         }
     }
     return render_template('index.html', **data)

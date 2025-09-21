@@ -36,6 +36,90 @@
             <h1 class="main-title">{{ firstname }} {{ lastname }}</h1>
             <h2 class="subtitle">{{ title }}</h2>
             <p class="desc">{{ description }}</p>
+            {% if contact.social %}
+            <div class="social-icons">
+                {% if contact.social.github %}
+                <a href="{{ contact.social.github }}" target="_blank" class="social-icon github">
+                    <img src="../static/icons/social/github.svg" alt="GitHub">
+                </a>
+                {% endif %}
+                {% if contact.social.gitlab %}
+                <a href="{{ contact.social.gitlab }}" target="_blank" class="social-icon gitlab">
+                    <img src="../static/icons/social/gitlab.svg" alt="GitLab">
+                </a>
+                {% endif %}
+                {% if contact.social.linkedin %}
+                <a href="{{ contact.social.linkedin }}" target="_blank" class="social-icon linkedin">
+                    <img src="../static/icons/social/linkedin.svg" alt="LinkedIn">
+                </a>
+                {% endif %}
+                {% if contact.social.x %}
+                <a href="{{ contact.social.x }}" target="_blank" class="social-icon twitter">
+                    <img src="../static/icons/social/x-twitter.svg" alt="X (Twitter)">
+                </a>
+                {% endif %}
+                {% if contact.social.instagram %}
+                <a href="{{ contact.social.instagram }}" target="_blank" class="social-icon instagram">
+                    <img src="../static/icons/social/instagram.svg" alt="Instagram">
+                </a>
+                {% endif %}
+                {% if contact.social.facebook %}
+                <a href="{{ contact.social.facebook }}" target="_blank" class="social-icon facebook">
+                    <img src="../static/icons/social/facebook.svg" alt="Facebook">
+                </a>
+                {% endif %}
+                {% if contact.social.youtube %}
+                <a href="{{ contact.social.youtube }}" target="_blank" class="social-icon youtube">
+                    <img src="../static/icons/social/youtube.svg" alt="YouTube">
+                </a>
+                {% endif %}
+                {% if contact.telegram %}
+                <a href="https://t.me/{{ contact.telegram }}" target="_blank" class="social-icon telegram">
+                    <img src="../static/icons/social/telegram.svg" alt="Telegram">
+                </a>
+                {% endif %}
+                {% if contact.social.whatsapp %}
+                <a href="{{ contact.social.whatsapp }}" target="_blank" class="social-icon whatsapp">
+                    <img src="../static/icons/social/whatsapp.svg" alt="WhatsApp">
+                </a>
+                {% endif %}
+                {% if contact.social.reddit %}
+                <a href="{{ contact.social.reddit }}" target="_blank" class="social-icon reddit">
+                    <img src="../static/icons/social/reddit.svg" alt="Reddit">
+                </a>
+                {% endif %}
+                {% if contact.social.twitch %}
+                <a href="{{ contact.social.twitch }}" target="_blank" class="social-icon twitch">
+                    <img src="../static/icons/social/twitch.svg" alt="Twitch">
+                </a>
+                {% endif %}
+                {% if contact.social.tiktok %}
+                <a href="{{ contact.social.tiktok }}" target="_blank" class="social-icon tiktok">
+                    <img src="../static/icons/social/tiktok.svg" alt="TikTok">
+                </a>
+                {% endif %}
+                {% if contact.social.snapchat %}
+                <a href="{{ contact.social.snapchat }}" target="_blank" class="social-icon snapchat">
+                    <img src="../static/icons/social/snapchat.svg" alt="Snapchat">
+                </a>
+                {% endif %}
+                {% if contact.social.stackoverflow %}
+                <a href="{{ contact.social.stackoverflow }}" target="_blank" class="social-icon stackoverflow">
+                    <img src="../static/icons/social/stack-overflow.svg" alt="Stack Overflow">
+                </a>
+                {% endif %}
+                {% if contact.social.threads %}
+                <a href="{{ contact.social.threads }}" target="_blank" class="social-icon threads">
+                    <img src="../static/icons/social/threads.svg" alt="Threads">
+                </a>
+                {% endif %}
+                {% if contact.social.line %}
+                <a href="{{ contact.social.line }}" target="_blank" class="social-icon line">
+                    <img src="../static/icons/social/line.svg" alt="Line">
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
         </header>
 
         <main>
@@ -153,7 +237,7 @@
                             </div>
                         </a>
                         <button class="copy-btn" data-copy="+{{ contact.phone }}">
-                             <span class="copy-icon">
+                            <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
                             <span class="copy-feedback hidden">کپی شد!</span>
