@@ -3,85 +3,88 @@ from flask import Flask, request, redirect, url_for, render_template
 data = {
     "firstname": "سیدحسین",
     "lastname": "موسوی دهاقانی",
-    "age": "20",
+    "birth_year": "1384",
     "title": "توسعه‌دهنده بک‌اند (Python & Django)",
     "description": "توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و خلاقیت",
-    "about": "من یک توسعه‌دهنده بک‌اند با تمرکز بر Python و Django هستم. علاقه‌مند به یادگیری تکنولوژی‌های جدید و حل چالش‌های پیچیده.",
+    "about": "برنامه‌نویس جوان، پرانرژی و علاقه‌مند به یادگیری مداوم با مهارت در کار با Python و فریم‌ورک‌های وب. مشتاق همکاری در تیم‌های حرفه‌ای برای رشد فردی و خلق راهکارهای نوآورانه در حوزه فناوری.</br></br>با توجه به نزدیک بودن موعد خدمت سربازی، به دنبال امریه سربازی در موقعیت‌های مرتبط با توسعه نرم‌افزار هستم تا در کنار گذراندن سربازی، مسیر حرفه‌ای خود را نیز ادامه دهم.",
     "skills": [
         "Python",
         "Django",
         "Flask",
         "RESTful API",
         "Git",
-        "PostgreSQL",
         "Linux",
-        "Docker"
+        "OpenCV-Python",
+        "HTML",
+        "CSS",
+        "Javascript",
     ],
-    "portfolio": {
-        "backend": {
-            "name": "بک‌اند",
-            "projects": [
-                {
-                    "title": "پروژه مدیریت کاربران",
-                    "description": "یک API برای مدیریت کاربران با Django REST Framework",
-                    "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
-                    "tags": ["Django", "REST", "API", "Backend"]
-                },
-                {
-                    "title": "پروژه احراز هویت",
-                    "description": "یک API برای احراز هویت کاربران با Django REST Framework",
-                    "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
-                    "tags": ["Django", "REST", "API"]
-                }
-            ]
-        },
-        "frontend": {
-            "name": "فرانت‌اند",
-            "projects": [
-                {
-                    "title": "وب‌سایت شرکتی",
-                    "description": "یک وب‌سایت شرکتی با React",
-                    "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
-                    "tags": ["React", "Frontend"]
-                },
-                {
-                    "title": "پروژه فروشگاه آنلاین",
-                    "description": "یک فروشگاه آنلاین با React",
-                    "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
-                    "tags": ["React", "Frontend"]
-                }
-            ]
-        },
-        "fullstack": {
-            "name": "فول‌استک",
-            "projects": [
-                {
-                    "title": "فروشگاه آنلاین",
-                    "description": "یک فروشگاه آنلاین با Django و React",
-                    "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
-                    "tags": ["Django", "React", "Fullstack"]
-                },
-                {
-                    "title": "پروژه مدیریت محتوا",
-                    "description": "یک پروژه فول‌استک با Django و React",
-                    "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
-                    "tags": ["Django", "React", "Fullstack"]
-                }
-            ]
-        },
-        "test": {
-            "name": "تست",
-            "projects": [
-                {
-                    "title": "پروژه تست",
-                    "description": "یک پروژه تست با Django و React",
-                    "image": "https://placehold.co/600x400/34d399/14532d?text=Test",
-                    "tags": ["Django", "React", "Test"],
-                    "link": "https://github.com/yourusername/test-project"
-                }
-            ]
-        }
-    },
+    
+    # "portfolio": {
+    #     "backend": {
+    #         "name": "بک‌اند",
+    #         "projects": [
+    #             {
+    #                 "title": "پروژه مدیریت کاربران",
+    #                 "description": "یک API برای مدیریت کاربران با Django REST Framework",
+    #                 "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
+    #                 "tags": ["Django", "REST", "API", "Backend"]
+    #             },
+    #             {
+    #                 "title": "پروژه احراز هویت",
+    #                 "description": "یک API برای احراز هویت کاربران با Django REST Framework",
+    #                 "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
+    #                 "tags": ["Django", "REST", "API"]
+    #             }
+    #         ]
+    #     },
+    #     "frontend": {
+    #         "name": "فرانت‌اند",
+    #         "projects": [
+    #             {
+    #                 "title": "وب‌سایت شرکتی",
+    #                 "description": "یک وب‌سایت شرکتی با React",
+    #                 "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
+    #                 "tags": ["React", "Frontend"]
+    #             },
+    #             {
+    #                 "title": "پروژه فروشگاه آنلاین",
+    #                 "description": "یک فروشگاه آنلاین با React",
+    #                 "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
+    #                 "tags": ["React", "Frontend"]
+    #             }
+    #         ]
+    #     },
+    #     "fullstack": {
+    #         "name": "فول‌استک",
+    #         "projects": [
+    #             {
+    #                 "title": "فروشگاه آنلاین",
+    #                 "description": "یک فروشگاه آنلاین با Django و React",
+    #                 "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
+    #                 "tags": ["Django", "React", "Fullstack"]
+    #             },
+    #             {
+    #                 "title": "پروژه مدیریت محتوا",
+    #                 "description": "یک پروژه فول‌استک با Django و React",
+    #                 "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
+    #                 "tags": ["Django", "React", "Fullstack"]
+    #             }
+    #         ]
+    #     },
+    #     "test": {
+    #         "name": "تست",
+    #         "projects": [
+    #             {
+    #                 "title": "پروژه تست",
+    #                 "description": "یک پروژه تست با Django و React",
+    #                 "image": "https://placehold.co/600x400/34d399/14532d?text=Test",
+    #                 "tags": ["Django", "React", "Test"],
+    #                 "link": "https://github.com/yourusername/test-project"
+    #             }
+    #         ]
+    #     }
+    # },
     "contact": {
         "email": "SeedHosein0@email.com",
         "phone": "989966697895",

@@ -128,7 +128,10 @@
             <section id="about" class="section" data-aos="fade-up">
                 <h3 class="section-title">درباره من</h3>
                 <div class="about-box">
-                    <p class="about-text">{{ about }}</p>
+                    <p class="about-text">{{ about|safe }}</p>
+                </div>
+                <div class="birth-year-box" data-aos="fade-up" data-aos-delay="100">
+                    <p class="about-text">تاریخ تولد: {{ birth_year }}</p>
                 </div>
             </section>
 
