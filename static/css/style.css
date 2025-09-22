@@ -82,7 +82,7 @@ html.dark body {
 .header-section {
     text-align: center;
     min-height: 110vh;
-    padding: 5rem 0 2rem;
+    padding: 5rem 0 4rem;
 }
 
 .profile-img {
@@ -299,13 +299,46 @@ html.dark .social-icon.reddit:hover img {
     background: #22BA4F;
 }
 
+@media screen and (max-width: 640px) {
+    .social-icon::before {
+        bottom: 0;
+    }
+    
+    .social-icon {
+        border-color: transparent;
+    }
+    
+    .social-icon img {
+        filter: brightness(0) invert(1);
+    }
+
+    .social-icon.gitlab img {
+        /* color: #E24329; */
+        filter: invert(32%) sepia(98%) saturate(2058%) hue-rotate(346deg) brightness(92%) contrast(93%);
+    }
+
+    html.dark .social-icon.reddit img {
+        /* color: #FF4500; */
+        filter: invert(34%) sepia(59%) saturate(4112%) hue-rotate(0deg) brightness(102%) contrast(106%);
+    }
+
+    .social-icon.snapchat img {
+        filter: unset;
+    }
+
+    .social-icon.stackoverflow img {
+        filter: invert(59%) sepia(17%) saturate(2464%) hue-rotate(341deg) brightness(97%) contrast(97%);
+    }
+
+}
+
 .hidden {
     display: none;
 }
 
 .section {
     min-height: 110vh;
-    padding: 6rem 0rem 2rem;
+    padding: 6rem 0rem 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -356,7 +389,7 @@ html.dark .about-box {
     box-shadow: 0px 2px 16px 0 rgb(0 0 0 / 0.06);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .about-box {
         padding: 1.25rem;
     }
@@ -496,13 +529,13 @@ html.dark .project-title {
     max-width: 900px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, minmax(min-content, 1fr));
     gap: 1.5rem;
 }
 
 @media (min-width: 640px) {
     .contact-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(min-content, 1fr));
     }
 }
 
@@ -566,6 +599,12 @@ html.dark .contact-value {
     border: none;
     cursor: pointer;
     margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 640px) {
+    .copy-btn {
+        opacity: 1;
+    }
 }
 
 .contact-item:hover .copy-btn {
@@ -783,9 +822,16 @@ html body .aos-init.aos-animate.project-card.active {
     width: 60vw;
     max-width: 800px;
     height: auto;
-    max-height: 80vh;
+    max-height: 90vh;
     overflow-y: auto;
     z-index: 1002;
+}
+
+@media screen and (max-width: 768px) {
+    .project-card.active .project-modal {
+        left: 5vw;
+        width: 90vw;
+    }
 }
 
 .project-card.active .project-img {
@@ -828,7 +874,6 @@ html.dark .project-close {
 
     .project-card.active .project-img {
         width: 100%;
-        height: 220px;
         display: block;
     }
 
