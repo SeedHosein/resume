@@ -169,13 +169,13 @@
                             <div class="project-content">
                                 <h4 class="project-title">{{ project.title }}</h4>
                                 {% if project.description %}
-                                <p class="project-description">{{ project.description }}</p>
+                                <p class="project-description">{{ project.description|safe }}</p>
                                 {% endif %}
                                 {% for tag in project.tags %}
                                 <span class="project-tag">{{ tag }}</span>
                                 {% endfor %}
                                 {% if project.link %}
-                                <a href="{{ project.link }}" class="project-link">مشاهده پروژه</a>
+                                <a href="{{ project.link }}" class="project-link "><span>مشاهده پروژه</span><img src="../static/icons/solid/arrow-left.svg" alt="arrow-left"></a>
                                 {% endif %}
                             </div>
                             <button class="project-close" aria-label="بستن" onclick="closeModal()">×</button>

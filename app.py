@@ -19,6 +19,20 @@ data = {
         "CSS",
         "Javascript",
     ],
+    "portfolio": {
+        "fullstack": {
+            "name": "فول‌استک",
+            "projects": [
+                {
+                    "title": "فروشگاه آنلاین",
+                    "description": "یک فروشگاه آنلاین با Django.",
+                    "image": "../static/image/portfolio/myshop.png",
+                    "tags": ["Python", "Django", "HTML", "CSS", "Javascript", "Fullstack"],
+                    "link": "https://github.com/SeedHosein/myshop"
+                },
+            ],
+        },
+    },
     
     # "portfolio": {
     #     "backend": {
