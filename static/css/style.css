@@ -750,7 +750,7 @@ html.dark .aos-init.aos-animate.project-card:not(.active):hover {
     overflow: hidden;
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
     position: relative;
-    transition: 1s all, 0s background;
+    /* transition: 1s all, 0s background; */
 }
 
 html.dark .project-card .project-modal {
@@ -848,8 +848,9 @@ html body .aos-init.aos-animate.project-card.active {
 
 .project-card.active .project-modal {
     position: fixed;
-    top: 10vh;
-    left: 20vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 60vw;
     max-width: 800px;
     height: auto;
@@ -857,10 +858,29 @@ html body .aos-init.aos-animate.project-card.active {
     overflow-y: auto;
     z-index: 1002;
 }
+.project-card.active ::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.project-card.active ::-webkit-scrollbar-track {
+    background: #00000000;
+}
+
+/* Handle */
+.project-card.active ::-webkit-scrollbar-thumb {
+    background: #242424;
+    border-radius: 2.5px;
+    width: 5px;
+}
+
+/* Handle on hover */
+.project-card.active ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f3f;
+}
 
 @media screen and (max-width: 768px) {
     .project-card.active .project-modal {
-        left: 5vw;
         width: 90vw;
     }
 }
