@@ -11,13 +11,13 @@ data = {
         "Python",
         "Django",
         "Flask",
-        "RESTful API",
-        "Git",
-        "Linux",
-        "OpenCV-Python",
+        "REST API",
+        "OpenCV Python",
+        "Javascript",
         "HTML",
         "CSS",
-        "Javascript",
+        "Git",
+        "Linux",
     ],
     "portfolio": {
         "fullstack": {

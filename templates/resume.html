@@ -139,9 +139,12 @@
             <!-- Skills Section -->
             <section id="skills" class="section" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="section-title">مهارت‌ها</h3>
-                <div class="skills-grid">
+                <div class="skills-flex">
                     {% for skill in skills %}
-                    <div class="skill-badge">{{ skill }}</div>
+                    <div class="skill-box">
+                        <img src="../static/icons/skill/{{ skill|lower }}.svg" alt="{{ skill }} logo">
+                        <p>{{ skill }}</p>
+                    </div>
                     {% endfor %}
                 </div>
             </section>

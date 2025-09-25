@@ -20,6 +20,7 @@
     --gray-900: #111827;
     --white: #fff;
     --black: #000;
+    --indigo-200: #9FA8DA;
     --indigo-400: #818cf8;
     --indigo-600: #4f46e5;
     --indigo-900: #312e81;
@@ -416,48 +417,92 @@ html.dark .about-text {
     color: var(--gray-300);
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 140px));
+.skills-flex {
+    display: flex;
     gap: 1rem;
-    max-width: -webkit-fill-available;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
+    max-width: 80vw;
+    flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(4, minmax(min-content, 140px));
+@media (min-width: 1023px) {
+    .skills-flex {
+        max-width: 43rem;
     }
 }
 
-.skill-badge {
-    display: inline-block;
-    text-align: center;
+.skill-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.75rem 0.5rem;
+    width: 10rem;
+    height: 10rem;
+    gap: 8px;
     border-radius: 0.75rem;
     background: var(--primary-light);
     color: var(--primary-dark);
-    font-weight: 500;
     font-size: 1rem;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
     cursor: default;
+    flex-wrap: wrap;
 }
 
-.skill-badge:hover {
+@media (max-width: 28rem) {
+    .skill-box {
+        width: 8rem;
+        height: 8rem;
+        font-size: 0.9rem;
+    }
+}
+
+.skill-box:hover {
     background: var(--primary);
     color: var(--white);
     transform: scale(1.05);
 }
 
-html.dark .skill-badge {
+html.dark .skill-box {
     background: var(--indigo-900);
     color: var(--indigo-200);
 }
 
-html.dark .skill-badge:hover {
+html.dark .skill-box:hover {
     background: var(--indigo-400);
     color: var(--white);
+}
+
+.skill-box img {
+    width: 100%;
+    position: relative;
+    height: 70%;
+    opacity: 0.9;
+}
+
+.skill-box:hover img {
+    opacity: 1;
+}
+
+@media screen and (max-width: 640px) {
+    .skill-box {
+        color: var(--white);
+    }
+
+    .skill-box img {
+        opacity: 1;
+    }
+}
+
+.skill-box p {
+    height: 30%;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+
 }
 
 .portfolio-filters {
@@ -895,6 +940,8 @@ html body .aos-init.aos-animate.project-card.active {
     position: absolute;
     top: 10px;
     right: 10px;
+    width: 35px;
+    height: 35px;
     z-index: 103;
     background: rgba(255, 255, 255, 0.9);
     border: none;
@@ -930,10 +977,5 @@ html.dark .project-close {
 
     .project-card.active .project-content {
         width: 100%;
-    }
-
-    .project-close {
-        left: auto;
-        right: 10px;
     }
 }
