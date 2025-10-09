@@ -159,4 +159,4 @@ Give a ⭐️ if this project helped you!
 <meta property="og:url" content="https://github.com/SeedHosein/resume">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Professional Resume Builder">
-<meta name="twitter:description" content="Create professional resumes easily with this modern, responsive resume builder.">"
+<meta name="twitter:description" content="Create professional resumes easily with this modern, responsive resume builder.">

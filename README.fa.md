@@ -163,4 +163,4 @@ data = {
 <meta property="og:url" content="https://github.com/SeedHosein/resume">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="رزومه ساز حرفه‌ای">
-<meta name="twitter:description" content="رزومه‌ساز حرفه‌ای و مدرن با قابلیت‌های پیشرفته">"
+<meta name="twitter:description" content="رزومه‌ساز حرفه‌ای و مدرن با قابلیت‌های پیشرفته">

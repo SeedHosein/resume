@@ -2,9 +2,28 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <title>رزومه {{ firstname }}</title>
+    <!-- meta tags for SEO -->
+    <meta name='keywords' content="resume, رزومه{% if skills %}{% for skill in skills %}, {{ skill }}{% endfor %}{% endif %}">
+    <meta name='description' content="{{ description_seo }}">
+    <meta name="author" content="{{ firstname }}, {{ contact.email }}">
+    <meta name='designer' content='SeedHosein, SeedHosein0@gmail.com'>
+    <meta name='url' content="{{ url_for('resume_fa', _external=True) }}">
+    <meta property="og:title" content="رزومه {{ firstname }} ({{ skills[0] }} developer)">
+    <meta property="og:description" content="{{ description_seo }}">
+    <meta property="og:url" content="{{ url_for('resume_fa', _external=True) }}">
+    <meta property="og:image" content="{{ url_for('static', filename='image/profile.jpeg', _external=True) }}">
+    <meta itemprop="name" content="رزومه {{ firstname }} ({{ skills[0] }} developer)">
+    <meta itemprop="description" content="{{ description_seo }}">
+    <meta itemprop="image" content="{{ url_for('static', filename='image/profile.jpeg', _external=True) }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url_for('resume_fa', _external=True) }}">
+    <meta name="twitter:title" content="رزومه {{ firstname }} ({{ skills[0] }} developer)">
+    <meta name="twitter:description" content="{{ description_seo }}">
+    <meta name="twitter:image" content="{{ url_for('static', filename='image/profile.jpeg', _external=True) }}">
+    <meta name="generator" content="SeedHosein, https://github.com/SeedHosein">
     <link rel="shortcut icon" type="image/x-icon" href="../static/profile.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رزومه {{ firstname }}</title>
     
     <!-- Custom CSS -->
     <link href="../static/css/font.css" rel="stylesheet">
@@ -17,7 +36,7 @@
 
 <body class="custom-bg custom-text transition-colors duration-500">
     <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle-btn">
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="change them">
         <svg id="theme-toggle-dark-icon" class="hidden toggle-icon" fill="currentColor" viewBox="0 0 20 20" 
             xmlns="http://www.w3.org/2000/svg">
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -205,7 +224,7 @@
                                 <p class="contact-value" dir="ltr">{{ contact.viewphone }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="+{{ contact.phone }}">
+                        <button class="copy-btn" data-copy="+{{ contact.phone }}" aria-label="copy number">
                             <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
@@ -224,7 +243,7 @@
                                 <p class="contact-value">{{ contact.email }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="{{ contact.email }}">
+                        <button class="copy-btn" data-copy="{{ contact.email }}" aria-label="copy email">
                              <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
@@ -243,7 +262,7 @@
                                 <p class="contact-value" dir="ltr">{{ contact.viewphone }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="+{{ contact.phone }}">
+                        <button class="copy-btn" data-copy="+{{ contact.phone }}" aria-label="copy whatsapp number">
                             <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
@@ -262,7 +281,7 @@
                                 <p class="contact-value">@{{ contact.telegram }}</p>
                             </div>
                         </a>
-                        <button class="copy-btn" data-copy="@{{ contact.telegram }}">
+                        <button class="copy-btn" data-copy="@{{ contact.telegram }}" aria-label="copy telegram id">
                             <span class="copy-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                             </span>
