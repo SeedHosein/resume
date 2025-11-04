@@ -1,6 +1,6 @@
 from flask import Flask, Response, request, redirect, url_for, render_template, json
 from flask_sitemapper import Sitemapper
-
+from whitenoise import WhiteNoise
 
 sitemapper = Sitemapper()
 
@@ -9,6 +9,8 @@ app = Flask(
         static_folder='static',
         static_url_path="/"
         )
+
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static', prefix='/')
 sitemapper.init_app(app)
 
 

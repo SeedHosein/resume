@@ -4,5 +4,7 @@
     "build":{
         "location":"iran"
     },
-    "disks":[]
+    "disk": {
+        "mountPath": "/app"
+    }
 }
