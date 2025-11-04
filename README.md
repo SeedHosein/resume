@@ -56,17 +56,17 @@ python app.py
 
 ### Basic Setup
 
-1. Open `app.py`
-2. Modify the `data` dictionary with your information:
+1. Open `data.json`
+2. Change the data with your information:
 
-```python
-data = {
+```json
+{
     "firstname": "Your Name",
     "lastname": "Your Lastname",
     "title": "Your Professional Title",
     "description": "Brief description about you",
     "skills": ["Skill 1", "Skill 2"],
-    # Add more details...
+    // Add more details...
 }
 ```
 
@@ -74,7 +74,7 @@ data = {
 
 Add your projects in the portfolio section:
 
-```python
+```json
 "portfolio": {
     "category": {
         "name": "Category Name",
@@ -95,13 +95,13 @@ Add your projects in the portfolio section:
 
 Configure your social media profiles:
 
-```python
+```json
 "contact": {
     "social": {
         "github": "your_github_url",
         "linkedin": "your_linkedin_url",
         "x": "your_twitter_url",
-        # Add more platforms...
+        // Add more platforms...
     }
 }
 ```

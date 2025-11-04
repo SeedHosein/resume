@@ -1,122 +1,6 @@
-from flask import Flask, Response, request, redirect, url_for, render_template
+from flask import Flask, Response, request, redirect, url_for, render_template, json
 from flask_sitemapper import Sitemapper
 
-data = {
-    "firstname": "سیدحسین",
-    "lastname": "موسوی دهاقانی",
-    "birth_year": "1384",
-    "title": "توسعه‌دهنده بک‌اند (Python & Django)",
-    "description": "توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و چالش",
-    "about": "برنامه‌نویس جوان، پرانرژی و علاقه‌مند به یادگیری مداوم با مهارت در کار با Python و فریم‌ورک‌های وب. مشتاق همکاری در تیم‌های حرفه‌ای برای رشد فردی و خلق راهکارهای نوآورانه در حوزه فناوری.</br></br>با توجه به نزدیک بودن موعد خدمت سربازی، به دنبال امریه سربازی در موقعیت‌های مرتبط با توسعه نرم‌افزار هستم تا در کنار گذراندن سربازی، مسیر حرفه‌ای خود را نیز ادامه دهم.",
-    "description_seo": "برنامه‌نویس جوان، پرانرژی و علاقه‌مند به یادگیری مداوم با مهارت در کار با Python و فریم‌ورک‌های وب.",
-    "skills": [
-        "Python",
-        "Django",
-        "Flask",
-        "REST API",
-        "OpenCV Python",
-        "Javascript",
-        "PostgreSQL",
-        "Docker",
-        "HTML",
-        "CSS",
-        "Git",
-        "Linux",
-    ],
-    "portfolio": {
-        "fullstack": {
-            "name": "فول‌استک",
-            "projects": [
-                {
-                    "title": "فروشگاه آنلاین",
-                    "description": "یک فروشگاه آنلاین با Django.",
-                    "image": "../static/image/portfolio/myshop.png",
-                    "tags": ["Python", "Django", "HTML", "CSS", "Javascript", "Fullstack"],
-                    "link": "https://github.com/SeedHosein/myshop"
-                },
-            ],
-        },
-    },
-    
-    # "portfolio": {
-    #     "backend": {
-    #         "name": "بک‌اند",
-    #         "projects": [
-    #             {
-    #                 "title": "پروژه مدیریت کاربران",
-    #                 "description": "یک API برای مدیریت کاربران با Django REST Framework",
-    #                 "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
-    #                 "tags": ["Django", "REST", "API", "Backend"]
-    #             },
-    #             {
-    #                 "title": "پروژه احراز هویت",
-    #                 "description": "یک API برای احراز هویت کاربران با Django REST Framework",
-    #                 "image": "https://placehold.co/600x400/1f2937/a5b4fc?text=Backend",
-    #                 "tags": ["Django", "REST", "API"]
-    #             }
-    #         ]
-    #     },
-    #     "frontend": {
-    #         "name": "فرانت‌اند",
-    #         "projects": [
-    #             {
-    #                 "title": "وب‌سایت شرکتی",
-    #                 "description": "یک وب‌سایت شرکتی با React",
-    #                 "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
-    #                 "tags": ["React", "Frontend"]
-    #             },
-    #             {
-    #                 "title": "پروژه فروشگاه آنلاین",
-    #                 "description": "یک فروشگاه آنلاین با React",
-    #                 "image": "https://placehold.co/600x400/38bdf8/1e3a8a?text=Frontend",
-    #                 "tags": ["React", "Frontend"]
-    #             }
-    #         ]
-    #     },
-    #     "fullstack": {
-    #         "name": "فول‌استک",
-    #         "projects": [
-    #             {
-    #                 "title": "فروشگاه آنلاین",
-    #                 "description": "یک فروشگاه آنلاین با Django و React",
-    #                 "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
-    #                 "tags": ["Django", "React", "Fullstack"]
-    #             },
-    #             {
-    #                 "title": "پروژه مدیریت محتوا",
-    #                 "description": "یک پروژه فول‌استک با Django و React",
-    #                 "image": "https://placehold.co/600x400/34d399/14532d?text=Fullstack",
-    #                 "tags": ["Django", "React", "Fullstack"]
-    #             }
-    #         ]
-    #     },
-    #     "test": {
-    #         "name": "تست",
-    #         "projects": [
-    #             {
-    #                 "title": "پروژه تست",
-    #                 "description": "یک پروژه تست با Django و React",
-    #                 "image": "https://placehold.co/600x400/34d399/14532d?text=Test",
-    #                 "tags": ["Django", "React", "Test"],
-    #                 "link": "https://github.com/yourusername/test-project"
-    #             }
-    #         ]
-    #     }
-    # },
-    "contact": {
-        "email": "SeedHosein0@gmail.com",
-        "phone": "989966697895",
-        "viewphone": "+98 996 669 7895",
-        "telegram": "SeedHosein0",
-        "location": "ایران، اصفهان",
-        "social": {
-            "github": "https://github.com/SeedHosein",
-            "linkedin": "https://www.linkedin.com/in/SeedHosein",
-            "instagram": "https://www.instagram.com/SeedHosein0",
-            "whatsapp": "https://wa.me/989966697895",
-        }
-    }
-}
 
 sitemapper = Sitemapper()
 
@@ -136,6 +20,9 @@ def index():
 @sitemapper.include(changefreq="daily", priority=0.9)
 @app.route("/fa/resume")
 def resume_fa():
+    with open("./data.json", "r") as f:
+        data = json.load(f)
+
     return render_template('resume.html', **data)
 
 

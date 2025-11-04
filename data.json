@@ -1,0 +1,53 @@
+{
+    "firstname": "سیدحسین",
+    "lastname": "موسوی دهاقانی",
+    "birth_year": "1384",
+    "title": "توسعه‌دهنده بک‌اند (Python & Django)",
+    "description": "توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و چالش",
+    "about": "برنامه‌نویس بک‌اند جوان و پرانرژی (متولد ۱۳۸۴)، با تمرکز بر Python، Django و Flask، و مهارت‌های کلیدی شامل REST API، OpenCV، JavaScript، PostgreSQL، Docker، HTML/CSS، Git و Linux. تجربه در پروژه‌های Fullstack مانند فروشگاه آنلاین، با اشتیاق به یادگیری مداوم و همکاری در تیم‌های حرفه‌ای برای خلق راهکارهای نوآورانه در فناوری.<br><br>آماده بهره‌برداری از فرصت‌های خدمت سربازی در قالب امریه برای ادامه فعالیت حرفه‌ای در حوزه توسعه نرم‌افزار.",
+    "description_seo": "برنامه‌نویس جوان، پرانرژی و علاقه‌مند به یادگیری مداوم با مهارت در کار با Python و فریم‌ورک‌های وب.",
+
+    "skills": [
+        "Python",
+        "Django",
+        "Flask",
+        "REST API",
+        "OpenCV Python",
+        "Javascript",
+        "PostgreSQL",
+        "Docker",
+        "HTML",
+        "CSS",
+        "Git",
+        "Linux"
+    ],
+
+    "portfolio": {
+        "fullstack": {
+            "name": "فول‌استک",
+            "projects": [
+                {
+                    "title": "فروشگاه آنلاین",
+                    "description": "یک فروشگاه آنلاین با Django.",
+                    "image": "../static/image/portfolio/myshop.png",
+                    "tags": ["Python", "Django", "HTML", "CSS", "Javascript", "Fullstack"],
+                    "link": "https://github.com/SeedHosein/myshop"
+                }
+            ]
+        }
+    },
+    
+    "contact": {
+        "email": "SeedHosein0@gmail.com",
+        "phone": "989966697895",
+        "viewphone": "+98 996 669 7895",
+        "telegram": "SeedHosein0",
+        "location": "ایران، اصفهان",
+        "social": {
+            "github": "https://github.com/SeedHosein",
+            "linkedin": "https://www.linkedin.com/in/SeedHosein",
+            "instagram": "https://www.instagram.com/SeedHosein0",
+            "whatsapp": "https://wa.me/989966697895"
+        }
+    }
+}
