@@ -4,9 +4,12 @@
     "birth_year": "1384",
     "title": "توسعه‌دهنده بک‌اند (Python & Django)",
     "description": "توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و چالش",
-    "about": "برنامه‌نویس بک‌اند جوان و پرانرژی (متولد ۱۳۸۴)، با تمرکز بر Python، Django و Flask، و مهارت‌های کلیدی شامل REST API، OpenCV، JavaScript، PostgreSQL، Docker، HTML/CSS، Git و Linux. تجربه در پروژه‌های Fullstack مانند فروشگاه آنلاین، با اشتیاق به یادگیری مداوم و همکاری در تیم‌های حرفه‌ای برای خلق راهکارهای نوآورانه در فناوری.<br><br>آماده بهره‌برداری از فرصت‌های خدمت سربازی در قالب امریه برای ادامه فعالیت حرفه‌ای در حوزه توسعه نرم‌افزار.",
-    "description_seo": "برنامه‌نویس جوان، پرانرژی و علاقه‌مند به یادگیری مداوم با مهارت در کار با Python و فریم‌ورک‌های وب.",
-
+    "about": "برنامه‌نویس بک‌اند جوان و پرانرژی (متولد ۱۳۸۴)، با تمرکز بر <strong>Python</strong>، <strong>Django</strong> و <strong>Flask</strong>، و مهارت‌های کلیدی شامل <strong>REST API</strong>، <strong>OpenCV</strong>، <strong>JavaScript</strong>، <strong>PostgreSQL</strong>، <strong>Docker</strong>، <strong>HTML/CSS</strong>، <strong>Git</strong> و <strong>Linux</strong>. تجربه در پروژه‌های Fullstack مانند فروشگاه آنلاین، با اشتیاق به یادگیری مداوم و همکاری در تیم‌های حرفه‌ای برای خلق راهکارهای نوآورانه در فناوری.<br><br>آماده بهره‌برداری از فرصت‌های خدمت سربازی در قالب <strong>امریه</strong> برای ادامه فعالیت حرفه‌ای در حوزه توسعه نرم‌افزار.",
+    "description_seo": "سیدحسین موسوی، برنامه‌نویس بک‌اند پایتون/Django با تجربه REST API، Docker و OpenCV.",
+    "location": {
+        "based_in": "اصفهان",
+        "available_in": ["اصفهان", "تهران"]
+    },
     "skills": [
         "Python",
         "Django",
@@ -21,22 +24,20 @@
         "Git",
         "Linux"
     ],
-
     "portfolio": {
         "fullstack": {
             "name": "فول‌استک",
             "projects": [
                 {
                     "title": "فروشگاه آنلاین",
-                    "description": "یک فروشگاه آنلاین با Django.",
-                    "image": "../static/image/portfolio/myshop.png",
+                    "description": "یک فروشگاه آنلاین کامل با Django، احراز هویت، سبد خرید و پرداخت آنلاین.",
+                    "image": "/image/portfolio/myshop.png",
                     "tags": ["Python", "Django", "HTML", "CSS", "Javascript", "Fullstack"],
                     "link": "https://github.com/SeedHosein/myshop"
                 }
             ]
         }
     },
-    
     "contact": {
         "email": "SeedHosein0@gmail.com",
         "phone": "989966697895",
@@ -48,6 +49,23 @@
             "linkedin": "https://www.linkedin.com/in/SeedHosein",
             "instagram": "https://www.instagram.com/SeedHosein0",
             "whatsapp": "https://wa.me/989966697895"
+        }
+    },
+    "seo": {
+        "title": "سیدحسین موسوی | برنامه‌نویس پایتون و Django",
+        "keywords": "برنامه نویس پایتون, Django, Flask, امریه سربازی, توسعه دهنده بک اند, رزومه برنامه نویسی, Python Developer, امریه فناوری اطلاعات, اصفهان",
+        "pdf_resume": "/resume-sayedhosein-mousavi.pdf",
+        "alternateName": "SeedHosein",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "امریه سربازی",
+            "itemListElement": [{
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "توسعه نرم‌افزار در دوران خدمت"
+            }
+            }]
         }
     }
 }

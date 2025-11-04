@@ -337,6 +337,43 @@ html.dark .social-icon.reddit:hover img {
 
 }
 
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    border-radius: 12px;
+    background: rgb(49, 46, 129);
+    box-shadow: unset;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    background: rgb(36, 34, 97);
+    box-shadow: 0 4px 10px rgba(36, 34, 97, 0.445);
+}
+
+.btn-download svg {
+    margin-right: 0.4rem;
+    stroke: rgb(255, 255, 255);
+}
+
+@media (max-width: 640px) {
+    .btn-download {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .hidden {
     display: none;
 }
@@ -381,7 +418,9 @@ html.dark .social-icon.reddit:hover img {
     }
 }
 
-.about-box, .birth-year-box {
+.about-box, 
+.birth-year-box,
+.location-box {
     max-width: 700px;
     background: var(--white);
     border-radius: 1.25rem;
@@ -389,13 +428,22 @@ html.dark .social-icon.reddit:hover img {
     padding: 2rem;
 }
 
-html.dark .about-box, html.dark .birth-year-box {
+html.dark .about-box, 
+html.dark .birth-year-box,
+html.dark .location-box {
     background: var(--gray-800);
     box-shadow: 0px 2px 16px 0 rgb(0 0 0 / 0.06);
 }
 
 .birth-year-box {
     max-width: 200px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-weight: 500;
+}
+
+.location-box {
     margin: 1.5rem auto 0;
     text-align: center;
     padding: 1rem 2rem;
