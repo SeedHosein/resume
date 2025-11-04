@@ -7,7 +7,7 @@ sitemapper = Sitemapper()
 app = Flask(
         __name__,
         static_folder='static',
-        static_url_path=""
+        static_url_path="/"
         )
 sitemapper.init_app(app)
 
