@@ -54,7 +54,7 @@
     "seo": {
         "title": "سیدحسین موسوی | برنامه‌نویس پایتون و Django",
         "keywords": "برنامه نویس پایتون, Django, Flask, امریه سربازی, توسعه دهنده بک اند, رزومه برنامه نویسی, Python Developer, امریه فناوری اطلاعات, اصفهان",
-        "pdf_resume": "/resume-sayedhosein-mousavi.pdf",
+        "pdf_resume": "/static/resume-sayedhosein-mousavi.pdf",
         "alternateName": "SeedHosein",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
