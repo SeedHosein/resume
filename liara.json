@@ -1,19 +1,8 @@
 {
-  "type": "flask",
-  "disk": {
-    "mountPath": "/app",
-    "sizeGB": 1
-  },
-  "env": {
-    "FLASK_ENV": "production"
-  },
-  "build": [
-    "pip install -r requirements.txt"
-  ],
-  "expose": [
-    {
-      "port": 80,
-      "path": "/"
-    }
-  ]
+    "app":"seedhosein",
+    "port":80,
+    "build":{
+        "location":"iran"
+    },
+    "disks":[]
 }
