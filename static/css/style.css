@@ -425,7 +425,7 @@ html.dark .social-icon.reddit:hover img {
     background: var(--white);
     border-radius: 1.25rem;
     box-shadow: 0px 2px 16px 20px rgb(90 89 90 / 25%);
-    padding: 2rem;
+    padding: 1.75rem;
 }
 
 html.dark .about-box, 
@@ -439,14 +439,14 @@ html.dark .location-box {
     max-width: 200px;
     margin: 1.5rem auto 0;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     font-weight: 500;
 }
 
 .location-box {
     margin: 1.5rem auto 0;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.75rem;
     font-weight: 500;
 }
 
@@ -768,10 +768,9 @@ html.dark .footer {
     color: var(--gray-400);
 }
 
+.language-toggle-btn,
 .theme-toggle-btn {
     position: fixed;
-    top: 1.5rem;
-    left: 1.5rem;
     z-index: 50;
     width: 44px;
     height: 44px;
@@ -786,23 +785,36 @@ html.dark .footer {
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
+.language-toggle-btn {
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.theme-toggle-btn {
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+.language-toggle-btn:hover,
 .theme-toggle-btn:hover {
     transform: scale(1.1);
     background: var(--gray-300);
 }
 
+html.dark .language-toggle-btn,
 html.dark .theme-toggle-btn {
     background: var(--gray-800);
     color: var(--gray-200);
 }
 
+html.dark .language-toggle-btn:hover,
 html.dark .theme-toggle-btn:hover {
     background: var(--gray-700);
 }
 
 .toggle-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 27px;
+    /* height: 1.25rem; */
 }
 
 /* Utility classes for transition (if needed) */

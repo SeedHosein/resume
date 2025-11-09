@@ -1,0 +1,71 @@
+{
+    "firstname": "Sayed Hosein",
+    "lastname": "Mousavi Dehaghani",
+    "birth_year": "2005",
+    "title": "Backend Developer (Python & Django)",
+    "description": "Backend Developer | API Specialist | Passionate about Learning and Challenges",
+    "about": "A young and energetic backend programmer, focusing on <strong>Python</strong>, <strong>Django</strong>, and <strong>Flask</strong>, with key skills including <strong>REST API</strong>, <strong>OpenCV</strong>, <strong>JavaScript</strong>, <strong>PostgreSQL</strong>, <strong>Docker</strong>, <strong>HTML/CSS</strong>, <strong>Git</strong>, and <strong>Linux</strong>. Experienced in Fullstack projects such as an online store, with a passion for continuous learning and collaborating in professional teams to create innovative solutions in technology.<br><br>Ready to leverage military service opportunities in the form of <strong>amrieh</strong> to continue professional activities in software development.",
+    "description_seo": "Seyyed Hossein Mousavi, Python/Django backend programmer with experience in REST API, Docker, and OpenCV.",
+    "location": {
+        "based_in": "Isfahan",
+        "available_in": ["Isfahan", "Tehran"]
+    },
+    "skills": [
+        "Python",
+        "Django",
+        "Flask",
+        "REST API",
+        "OpenCV Python",
+        "JavaScript",
+        "PostgreSQL",
+        "Docker",
+        "HTML",
+        "CSS",
+        "Git",
+        "Linux"
+    ],
+    "portfolio": {
+        "fullstack": {
+            "name": "Fullstack",
+            "projects": [
+                {
+                    "title": "Online Store",
+                    "description": "Design and development of an online store using Django and Django REST Framework for managing users, products, and orders.<br>The database is developed with SQLite3, and the front-end is implemented using HTML5, CSS3, and JavaScript.<br>The project is still under development.",
+                    "image": "/static/image/portfolio/myshop.png",
+                    "tags": ["Python", "Django", "HTML", "CSS", "JavaScript", "Fullstack"],
+                    "link": "https://github.com/SeedHosein/myshop"
+                }
+            ]
+        }
+    },
+    "contact": {
+        "email": "SeedHosein0@gmail.com",
+        "phone": "989966697895",
+        "viewphone": "+98 996 669 7895",
+        "telegram": "SeedHosein0",
+        "location": "Iran, Isfahan",
+        "social": {
+            "github": "https://github.com/SeedHosein",
+            "linkedin": "https://www.linkedin.com/in/SeedHosein",
+            "instagram": "https://www.instagram.com/SeedHosein0",
+            "whatsapp": "https://wa.me/989966697895"
+        }
+    },
+    "seo": {
+        "title": "Seyyed Hossein Mousavi | Python and Django Programmer",
+        "keywords": "Python programmer, Django, Flask, military service amrieh, backend developer, programming resume, Python Developer, IT amrieh, Isfahan",
+        "pdf_resume": "/static/resume-sayedhosein-mousavi-en.pdf",
+        "alternateName": "SeedHosein",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Military Service Amrieh",
+            "itemListElement": [{
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Software Development During Military Service"
+                }
+            }]
+        }
+    }
+}

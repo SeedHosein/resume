@@ -4,7 +4,7 @@
     "birth_year": "1384",
     "title": "توسعه‌دهنده بک‌اند (Python & Django)",
     "description": "توسعه‌دهنده بک‌اند | متخصص API | عاشق یادگیری و چالش",
-    "about": "برنامه‌نویس بک‌اند جوان و پرانرژی (متولد ۱۳۸۴)، با تمرکز بر <strong>Python</strong>، <strong>Django</strong> و <strong>Flask</strong>، و مهارت‌های کلیدی شامل <strong>REST API</strong>، <strong>OpenCV</strong>، <strong>JavaScript</strong>، <strong>PostgreSQL</strong>، <strong>Docker</strong>، <strong>HTML/CSS</strong>، <strong>Git</strong> و <strong>Linux</strong>. تجربه در پروژه‌های Fullstack مانند فروشگاه آنلاین، با اشتیاق به یادگیری مداوم و همکاری در تیم‌های حرفه‌ای برای خلق راهکارهای نوآورانه در فناوری.<br><br>آماده بهره‌برداری از فرصت‌های خدمت سربازی در قالب <strong>امریه</strong> برای ادامه فعالیت حرفه‌ای در حوزه توسعه نرم‌افزار.",
+    "about": "برنامه‌نویس بک‌اند جوان و پرانرژی، با تمرکز بر <strong>Python</strong>، <strong>Django</strong> و <strong>Flask</strong>، و مهارت‌های کلیدی شامل <strong>REST API</strong>، <strong>OpenCV</strong>، <strong>JavaScript</strong>، <strong>PostgreSQL</strong>، <strong>Docker</strong>، <strong>HTML/CSS</strong>، <strong>Git</strong> و <strong>Linux</strong>. تجربه در پروژه‌های Fullstack مانند فروشگاه آنلاین، با اشتیاق به یادگیری مداوم و همکاری در تیم‌های حرفه‌ای برای خلق راهکارهای نوآورانه در فناوری.<br><br>آماده بهره‌برداری از فرصت‌های خدمت سربازی در قالب <strong>امریه</strong> برای ادامه فعالیت حرفه‌ای در حوزه توسعه نرم‌افزار.",
     "description_seo": "سیدحسین موسوی، برنامه‌نویس بک‌اند پایتون/Django با تجربه REST API، Docker و OpenCV.",
     "location": {
         "based_in": "اصفهان",
@@ -30,7 +30,7 @@
             "projects": [
                 {
                     "title": "فروشگاه آنلاین",
-                    "description": "یک فروشگاه آنلاین کامل با Django، احراز هویت، سبد خرید و پرداخت آنلاین.",
+                    "description": "طراحی و توسعه فروشگاه اینترنتی با Django و Django REST Framework برای مدیریت کاربران، محصولات و سفارش‌ها.<br>پایگاه‌داده توسعه SQLite3 و فرانت‌اند با HTML5، CSS3، JavaScript پیاده‌سازی شده است.<br>پروژه هنوز در حال توسعه است.",
                     "image": "/static/image/portfolio/myshop.png",
                     "tags": ["Python", "Django", "HTML", "CSS", "Javascript", "Fullstack"],
                     "link": "https://github.com/SeedHosein/myshop"
@@ -54,7 +54,7 @@
     "seo": {
         "title": "سیدحسین موسوی | برنامه‌نویس پایتون و Django",
         "keywords": "برنامه نویس پایتون, Django, Flask, امریه سربازی, توسعه دهنده بک اند, رزومه برنامه نویسی, Python Developer, امریه فناوری اطلاعات, اصفهان",
-        "pdf_resume": "/static/resume-sayedhosein-mousavi.pdf",
+        "pdf_resume": "/static/resume-sayedhosein-mousavi-fa.pdf",
         "alternateName": "SeedHosein",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",

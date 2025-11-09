@@ -1,0 +1,385 @@
+<!--
+  OpenResume v1.0 | Personal Build
+  Owner: Sayed Hosein Mousavi Dehaghani (SeedHosein)
+  Source: https://github.com/SeedHosein/resume
+-->
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ seo.title }}</title>
+
+    <meta name="description" content="{{ description_seo }}">
+
+    <meta name="keywords" content="{{ seo.keywords }}">
+
+    <meta name="author" content="{{ firstname }}, {{ contact.email }}">
+    <meta name="robots" content="index, follow">
+    <meta name="designer" content="SeedHosein, SeedHosein0@gmail.com">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ url_external }}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='profile.ico') }}" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ firstname }} {{ lastname }} | {{ title }}">
+    <meta property="og:description" content="{{ description_seo }}">
+    <meta property="og:url" content="{{ url_external }}">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="{{ url_for('static', filename='image/profile.jpeg', _external=True) }}">
+    <meta property="og:locale" content="fa">
+    
+    <meta itemprop="name" content="{{ firstname }} {{ lastname }} | {{ title }}">
+    <meta itemprop="description" content="{{ description_seo }}">
+    <meta itemprop="image" content="{{ url_for('static', filename='image/profile.jpeg', _external=True) }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url_external }}">
+    <meta name="twitter:title" content="{{ firstname }} {{ lastname }} | {{ title }}">
+    <meta name="twitter:description" content="{{ description_seo }}">
+    <meta name="twitter:image" content="{{ url_for('static', filename='image/profile.jpeg', _external=True) }}">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "{{ firstname }} {{ lastname }}",
+            "alternateName": "{{ seo.alternateName }}",
+            "jobTitle": "{{ title }}",
+            "url": "{{ url_external }}",
+            "image": "{{ url_for('static', filename='image/profile.jpeg', _external=True) }}",
+            "description": "{{ description_seo | striptags }}",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "{{ contact.location }}"
+            },
+            "email": "mailto:{{ contact.email }}",
+            "telephone": "+{{ contact.phone }}",
+            "sameAs": [
+                {% for platform, url in contact.social.items() %}"{{ url }}"{% if not loop.last %}, {% endif %}{% endfor %}
+            ],
+            "knowsAbout": [{% for skill in skills %}"{{ skill }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+            "hasOfferCatalog": {{ seo.hasOfferCatalog | safe }}
+        }
+    </script>
+
+    <!-- CSS -->
+    <link href="{{ url_for('static', filename='css/font.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/snap-scroll.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/aos.css') }}" rel="stylesheet">
+</head>
+
+<body class="custom-bg custom-text transition-colors duration-500">
+    <!-- Language Toggle Button -->
+    <button onclick="location.href='{{ url_for("resume_en") }}'" type="button"
+            id="language-toggle" class="language-toggle-btn" aria-label="تغییر زبان">
+        <svg viewBox="0 0 80 70" width="37">
+            <!-- EN Rectangle -->
+            <rect x="5" y="5" width="40" height="40" fill="none" stroke="#000" stroke-width="3" rx="10"></rect>
+            <!-- Text for EN -->
+            <text x="25" y="33" font-family="Arial, sans-serif" fill="#000" text-anchor="middle" font-size="25">EN</text>
+            <!-- FA Rectangle -->
+            <rect x="30" y="25" width="40" height="40" fill="white" stroke="#fff" stroke-width="3" rx="10"></rect>
+            <!-- Text for FA -->
+            <text x="50" y="54" font-family="Arial, sans-serif" fill="#000000" text-anchor="middle" font-size="25">FA</text>
+        </svg>
+    </button>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر تم">
+        <svg id="theme-toggle-dark-icon" class="hidden toggle-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden toggle-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path 
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header-section" data-aos="fade-down">
+            <img class="profile-img shadow-xl"
+                 src="{{ url_for('static', filename='image/profile.jpeg') }}"
+                 alt="تصویر پروفایل {{ firstname }}">
+                 
+            <h1 class="main-title">{{ firstname }} {{ lastname }}</h1>
+            <h2 class="subtitle">{{ title }}</h2>
+            <p class="desc">{{ description }}</p>
+
+            <!-- Social Icons -->
+            {% if contact.social %}
+            <div class="social-icons">
+                {% if contact.social.github %}
+                <a href="{{ contact.social.github }}" target="_blank" class="social-icon github" aria-label="گیت‌هاب">
+                    <img src="{{ url_for('static', filename='icons/social/github.svg') }}" alt="گیت‌هاب">
+                </a>
+                {% endif %}
+                {% if contact.social.gitlab %}
+                <a href="{{ contact.social.gitlab }}" target="_blank" class="social-icon gitlab" aria-label="گیت‌لب">
+                    <img src="{{ url_for('static', filename='icons/social/gitlab.svg') }}" alt="گیت‌لب">
+                </a>
+                {% endif %}
+                {% if contact.social.linkedin %}
+                <a href="{{ contact.social.linkedin }}" target="_blank" class="social-icon linkedin" aria-label="لینکدین">
+                    <img src="{{ url_for('static', filename='icons/social/linkedin.svg') }}" alt="لینکدین">
+                </a>
+                {% endif %}
+                {% if contact.social.x %}
+                <a href="{{ contact.social.x }}" target="_blank" class="social-icon twitter" aria-label="ایکس (توییتر)">
+                    <img src="{{ url_for('static', filename='icons/social/x-twitter.svg') }}" alt="ایکس (توییتر)">
+                </a>
+                {% endif %}
+                {% if contact.social.instagram %}
+                <a href="{{ contact.social.instagram }}" target="_blank" class="social-icon instagram" aria-label="اینستاگرام">
+                    <img src="{{ url_for('static', filename='icons/social/instagram.svg') }}" alt="اینستاگرام">
+                </a>
+                {% endif %}
+                {% if contact.social.facebook %}
+                <a href="{{ contact.social.facebook }}" target="_blank" class="social-icon facebook" aria-label="فیسبوک">
+                    <img src="{{ url_for('static', filename='icons/social/facebook.svg') }}" alt="فیسبوک">
+                </a>
+                {% endif %}
+                {% if contact.social.youtube %}
+                <a href="{{ contact.social.youtube }}" target="_blank" class="social-icon youtube" aria-label="یوتیوب">
+                    <img src="{{ url_for('static', filename='icons/social/youtube.svg') }}" alt="یوتیوب">
+                </a>
+                {% endif %}
+                {% if contact.telegram %}
+                <a href="https://t.me/{{ contact.telegram }}" target="_blank" class="social-icon telegram" aria-label="تلگرام">
+                    <img src="{{ url_for('static', filename='icons/social/telegram.svg') }}" alt="تلگرام">
+                </a>
+                {% endif %}
+                {% if contact.social.whatsapp %}
+                <a href="{{ contact.social.whatsapp }}" target="_blank" class="social-icon whatsapp" aria-label="واتساپ">
+                    <img src="{{ url_for('static', filename='icons/social/whatsapp.svg') }}" alt="واتساپ">
+                </a>
+                {% endif %}
+                {% if contact.social.reddit %}
+                <a href="{{ contact.social.reddit }}" target="_blank" class="social-icon reddit" aria-label="ردیت">
+                    <img src="{{ url_for('static', filename='icons/social/reddit.svg') }}" alt="ردیت">
+                </a>
+                {% endif %}
+                {% if contact.social.twitch %}
+                <a href="{{ contact.social.twitch }}" target="_blank" class="social-icon twitch" aria-label="توییتر">
+                    <img src="{{ url_for('static', filename='icons/social/twitch.svg') }}" alt="توییتر">
+                </a>
+                {% endif %}
+                {% if contact.social.tiktok %}
+                <a href="{{ contact.social.tiktok }}" target="_blank" class="social-icon tiktok" aria-label="تیک تاک">
+                    <img src="{{ url_for('static', filename='icons/social/tiktok.svg') }}" alt="تیک تاک">
+                </a>
+                {% endif %}
+                {% if contact.social.snapchat %}
+                <a href="{{ contact.social.snapchat }}" target="_blank" class="social-icon snapchat" aria-label="اسنپ چت">
+                    <img src="{{ url_for('static', filename='icons/social/snapchat.svg') }}" alt="اسنپ ​​چت">
+                </a>
+                {% endif %}
+                {% if contact.social.stackoverflow %}
+                <a href="{{ contact.social.stackoverflow }}" target="_blank" class="social-icon stackoverflow" aria-label="Stack Overflow">
+                    <img src="{{ url_for('static', filename='icons/social/stack-overflow.svg') }}" alt="Stack Overflow">
+                </a>
+                {% endif %}
+                {% if contact.social.threads %}
+                <a href="{{ contact.social.threads }}" target="_blank" class="social-icon threads" aria-label="Threads">
+                    <img src="{{ url_for('static', filename='icons/social/threads.svg') }}" alt="Threads">
+                </a>
+                {% endif %}
+                {% if contact.social.line %}
+                <a href="{{ contact.social.line }}" target="_blank" class="social-icon line" aria-label="Line">
+                    <img src="{{ url_for('static', filename='icons/social/line.svg') }}" alt="Line">
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+            
+            <!-- Download Resume PDF -->
+            <a href="{{ seo.pdf_resume }}" download class="btn-download">
+                دانلود PDF رزومه
+                <svg width="25" height="25">
+                    <path d="m4.18,23.14l16.65,0m-15.73,-12.03l7.41,6.47l7.41,-6.47m-7.41,-9.26l0,15.73" fill="none" stroke-width="3"/>
+                </svg>
+            </a>
+        </header>
+        
+        <main>
+            <!-- About Section -->
+            <section id="about" class="section" data-aos="fade-up">
+                <h3 class="section-title">درباره من</h3>
+                <div class="about-box">
+                    <p class="about-text">{{ about | safe }}</p>
+                </div>
+                <div class="location-box" data-aos="fade-up" data-aos-delay="100">
+                    <p class="about-text"><strong>مستقر در:</strong> {{ location.based_in }} | <strong>همکاری حضوری:</strong> {{ location.available_in | join(' و ') }}</p>
+                </div>
+                <div class="birth-year-box" data-aos="fade-up" data-aos-delay="100">
+                    <p class="about-text">تاریخ تولد: {{ birth_year }}</p>
+                </div>
+            </section>
+
+            {% if skills %}
+            <!-- Skills Section -->
+            <section id="skills" class="section" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="section-title">مهارت‌ها</h3>
+                <div class="skills-flex">
+                    {% for skill in skills %}
+                    <div class="skill-box">
+                        <img src="{{ url_for('static', filename='icons/skill/' ~ skill|lower ~ '.svg') }}"
+                             alt="لوگو {{ skill }}" onerror="this.style.display='none'">
+                        <p>{{ skill }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+            
+            {% if portfolio %}
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="section" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="section-title">نمونه‌کارها</h3>
+                <!-- Filter Buttons -->
+                <div class="portfolio-filters" id="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">همه</button>
+                    {% for category, details in portfolio.items() %}
+                    <button class="filter-btn" data-filter="{{ category }}">{{ details.name }}</button>
+                    {% endfor %}
+                </div>
+                <!-- Projects Grid -->
+                <div id="portfolio-grid" class="portfolio-grid">
+                    {% for category, details in portfolio.items() %}
+                    {% for project in details.projects %}
+                    <div class="project-card" data-category="{{ category }}" data-aos="zoom-in-up">
+                        <div class="overlay"></div>
+                        <div class="project-modal">
+                            <img class="project-img" src="{{ project.image }}" alt="{{ project.title }} با {{ project.tags | join(', ') }}">
+                            <div class="project-content">
+                                <h4 class="project-title">{{ project.title }}</h4>
+                                {% if project.description %}
+                                <p class="project-description">{{ project.description | safe }}</p>
+                                {% endif %}
+                                {% for tag in project.tags %}
+                                <span class="project-tag">{{ tag }}</span>
+                                {% endfor %}
+                                {% if project.link %}
+                                <a href="{{ project.link }}" class="project-link" target="_blank">
+                                    <span>مشاهده پروژه</span>
+                                    <img src="{{ url_for('static', filename='icons/solid/arrow-left.svg') }}" alt="فلش چپ">
+                                </a>
+                                {% endif %}
+                            </div>
+                            <button class="project-close" aria-label="بستن" onclick="closeModal()">×</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            {% if contact %}
+            <!-- Contact Section -->
+            <section id="contact" class="section footer-section" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="section-title">تماس با من</h3>
+                <div class="contact-grid">
+                    {% if contact.phone %}
+                    <!-- Phone -->
+                    <div class="contact-item group shadow-contact-item">
+                        <a href="tel:+{{ contact.phone }}" class="contact-link">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <p class="contact-label">تلفن</p>
+                                <p class="contact-value" dir="ltr">{{ contact.viewphone }}</p>
+                            </div>
+                        </a>
+                        <button class="copy-btn" data-copy="+{{ contact.phone }}" aria-label="کپی شماره">
+                            <span class="copy-icon">
+                                <svg class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </span>
+                            <span class="copy-feedback hidden">کپی شد!</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    
+                    {% if contact.email %}
+                    <!-- Email -->
+                    <div class="contact-item group shadow-contact-item">
+                        <a href="mailto:{{ contact.email }}" class="contact-link">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <p class="contact-label">ایمیل</p>
+                                <p class="contact-value">{{ contact.email }}</p>
+                            </div>
+                        </a>
+                        <button class="copy-btn" data-copy="{{ contact.email }}" aria-label="کپی ایمیل">
+                            <span class="copy-icon">
+                                <svg class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </span>
+                            <span class="copy-feedback hidden">کپی شد!</span>
+                        </button>
+                    </div>
+                    {% endif %}
+
+                    {% if contact.phone %}
+                    <!-- WhatsApp -->
+                    <div class="contact-item group shadow-contact-item">
+                        <a href="https://wa.me/{{ contact.phone }}" target="_blank" class="contact-link">
+                            <span class="contact-icon">💬</span>
+                            <div>
+                                <p class="contact-label">واتساپ</p>
+                                <p class="contact-value" dir="ltr">{{ contact.viewphone }}</p>
+                            </div>
+                        </a>
+                        <button class="copy-btn" data-copy="+{{ contact.phone }}" aria-label="کپی شماره واتساپ">
+                            <span class="copy-icon">
+                                <svg class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </span>
+                            <span class="copy-feedback hidden">کپی شد!</span>
+                        </button>
+                    </div>
+                    {% endif %}
+
+                    {% if contact.telegram %}
+                    <!-- Telegram -->
+                    <div class="contact-item group shadow-contact-item">
+                        <a href="https://t.me/{{ contact.telegram }}" target="_blank" class="contact-link">
+                            <span class="contact-icon">📢</span>
+                            <div>
+                                <p class="contact-label">تلگرام</p>
+                                <p class="contact-value">@{{ contact.telegram }}</p>
+                            </div>
+                        </a>
+                        <button class="copy-btn" data-copy="@{{ contact.telegram }}" aria-label="کپی آیدی تلگرام">
+                            <span class="copy-icon">
+                                <svg class="icon-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </span>
+                            <span class="copy-feedback hidden">کپی شد!</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+            {% endif %}
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 - طراحی شده توسط {{ firstname }}</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
