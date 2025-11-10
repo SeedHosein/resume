@@ -56,7 +56,7 @@ python app.py
 
 ### Basic Setup
 
-1. Open `data.json`
+1. Open `data-fa.json` and `data-en.json`
 2. Change the data with your information:
 
 ```json
