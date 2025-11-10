@@ -66,7 +66,7 @@
                 {% for platform, url in contact.social.items() %}"{{ url }}"{% if not loop.last %}, {% endif %}{% endfor %}
             ],
             "knowsAbout": [{% for skill in skills %}"{{ skill }}"{% if not loop.last %}, {% endif %}{% endfor %}],
-            "hasOfferCatalog": {{ seo.hasOfferCatalog | safe }}
+            "hasOfferCatalog": {{ seo.hasOfferCatalog | tojson_utf8 | safe }}
         }
     </script>
 

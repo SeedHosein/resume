@@ -13,6 +13,11 @@ app = Flask(
 sitemapper.init_app(app)
 
 
+@app.template_filter("tojson_utf8")
+def tojson_utf8(obj):
+    return json.dumps(obj, ensure_ascii=False)
+
+
 @sitemapper.include(changefreq="weekly", priority=1.0)
 @app.route("/")
 def index():
